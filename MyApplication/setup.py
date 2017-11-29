@@ -1,4 +1,9 @@
-from distutils.core import setup
+try:
+    from setuptools import setup
+    print ("Using setuptools")
+except ImportError:
+    from distutils.core import setup
+    print("Using distutils")
 
 setup(
     # Application name:
