@@ -9,7 +9,11 @@ pipeline {
     stage('Build Package') {
       steps {
         echo 'Build Package here'
-        sh '''whoami
+        sh '''curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+pyenv versions
+pyenv install 3.6.3
+pyenv global 3.6.3
+pyenv versions
 cd MyApplication
 python --version
 python setup.py sdist
