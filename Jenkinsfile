@@ -9,7 +9,9 @@ pipeline {
     stage('Build Package') {
       steps {
         echo 'Build Package here'
-        sh '''cd MyApplication
+        sh '''whoami
+cd MyApplication
+python --version
 python setup.py sdist
 python setup.py bdist_wheel
 
