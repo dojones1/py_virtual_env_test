@@ -15,10 +15,10 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 pyenv versions
-pyenv install 3.6.3
+pyenv install 3.6.3 || true
 pyenv global 3.6.3
 pyenv versions
-pip install wheel
+pip install wheel || true
 
 cd MyApplication
 python --version
