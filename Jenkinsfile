@@ -1,16 +1,17 @@
 pipeline {
-  agent {
-    label 'ubuntu' 
-  }
+
   stages {
-    stage('Unit Test') {
+	  stage('Unit Test') {
+	  agent {
+		label 'build' 
+	  }
       steps {
         echo 'Unit Test here'
       }
     }
     stage('Build Package') {
       agent {
-        label 'package' 
+        label 'build' 
       }      
       steps {
         echo 'Build Package here'
