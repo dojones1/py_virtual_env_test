@@ -15,8 +15,8 @@ pipeline {
         pwd
         curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 export PATH="~jenkins/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+pyenv init -
+pyenv virtualenv-init -
 
 pyenv versions
 pyenv install 3.6.3 || true
