@@ -1,14 +1,13 @@
 pipeline {
-  agent {
-	label: 'master'
-  }
+  agent none
   stages {
 	stage('Unit Test') {
 	  agent {
 		label 'build' 
 	  }
       steps {
-        echo 'Unit Test here'
+        deleteDir()
+		echo 'Unit Test here'
       }
     }
     stage('Build Package') {
@@ -16,7 +15,8 @@ pipeline {
         label 'build' 
       }      
       steps {
-        echo 'Build Package here'
+        deleteDir()
+		echo 'Build Package here'
         sh '''
         whoami
         pwd
