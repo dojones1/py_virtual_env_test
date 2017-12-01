@@ -1,5 +1,7 @@
 pipeline {
-
+  agent {
+	label 'build' 
+  }
   stages {
 	  stage('Unit Test') {
 	  agent {
