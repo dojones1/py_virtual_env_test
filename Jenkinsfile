@@ -14,7 +14,7 @@ pipeline {
         sh '''whoami
         pwd
         curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-export PATH="/var/lib/jenkins/.pyenv/bin:$PATH"
+export PATH="~jenkins/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
