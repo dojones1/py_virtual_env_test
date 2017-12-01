@@ -1,9 +1,9 @@
 pipeline {
   agent {
-	label 'build' 
+	label: 'master'
   }
   stages {
-	  stage('Unit Test') {
+	stage('Unit Test') {
 	  agent {
 		label 'build' 
 	  }
