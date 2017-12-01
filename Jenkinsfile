@@ -13,8 +13,10 @@ pipeline {
         echo 'Build Package here'
         sh '''whoami
         pwd
+        export PATH="/home/jenkins/.pyenv/bin:$PATH"
+        
         curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-export PATH="~jenkins/.pyenv/bin:$PATH"
+which pyenv
 pyenv init -
 pyenv virtualenv-init -
 
