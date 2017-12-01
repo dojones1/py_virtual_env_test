@@ -34,7 +34,7 @@ pipeline {
         python setup.py bdist_wheel
 '''
         archiveArtifacts 'MyApplication/dist/*'
-        stash 'MyApplication/dist/*.whl' package
+        stash includes: 'MyApplication/dist/', name: 'package'
       }
     }
     stage('Install package') {
@@ -43,7 +43,7 @@ pipeline {
       }
       steps {
         echo 'install package here'
-        unstash package
+        unstash 'package'
         sh '''
         export PATH="/home/jenkins/.pyenv/bin:$PATH"
         which pyenv
